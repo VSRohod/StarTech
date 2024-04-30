@@ -7,3 +7,12 @@ class Produtos {
         this.imgSrc = imgSrc;
     }
 }
+
+class ProdutosDoCarrinho {
+    constructor(codProduto,nome,valor){
+        this.codProduto = codProduto;
+        this.nome = nome;
+        this.valor = valor;
+    }
+}
+

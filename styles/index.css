@@ -10,3 +10,17 @@ header{
 .nav-link, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .navbar-brand {
     color: white;
 }
+
+#carrinhoDados{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.itemCarrinho{
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
