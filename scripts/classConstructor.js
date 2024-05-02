@@ -13,6 +13,7 @@ class ProdutosDoCarrinho {
         this.codProduto = codProduto;
         this.nome = nome;
         this.valor = valor;
+        this.item = 0;
     }
 }
 

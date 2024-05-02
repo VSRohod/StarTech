@@ -1,6 +1,7 @@
 function atualizarCarrinho(){
     let carrinhoHtml = document.querySelector("#carrinhoDados");
     let resultadoCarrinhoHtml = document.querySelector("#resultadoCarrinho");
+    let indice = 0;
     carrinhoHtml.innerHTML = "";
 
     carrinho.forEach((produto) => {
@@ -8,7 +9,9 @@ function atualizarCarrinho(){
         <div class="itemCarrinho">
             <div class="productInfoCarrinho">${produto.nome}</div>
             <div class="productValuesCarrinho">${produto.valor}</div>
+            <button type="button" class="deleteBtn" onclick="deletarCarrinho(${indice})"> X </button> 
         </div>`;
+        indice++
     });
 
     resultadoCarrinhoHtml.innerHTML = `<h5>O valor total é de : R$ ${valorTotal.toFixed(2)}</h5>`
@@ -36,6 +39,14 @@ function adicionarCarrinho(codProduto){
     
     carrinho.push(new ProdutosDoCarrinho(codProduto,produtoAdicionado.nome,produtoAdicionado.valor));
     valorTotal += produtoAdicionado.valor;
+
+    atualizarCarrinho();
+}
+
+function deletarCarrinho(indiceNum){
+    let valorDoItem = carrinho[indiceNum].valor;
+    valorTotal -= valorDoItem;
+    carrinho.splice(carrinho[indiceNum],1);
 
     atualizarCarrinho();
 }
